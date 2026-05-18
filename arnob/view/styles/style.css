@@ -1,0 +1,277 @@
+/* ── Reset ──────────────────────────────────────────────────── */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    color: #2c3e50;
+    background-color: #f5f7fa;
+    padding: 20px;
+}
+
+/* ── Headings ───────────────────────────────────────────────── */
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a252f;
+    margin-bottom: 6px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2980b9;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    margin-top: 24px;
+}
+
+/* ── Links ──────────────────────────────────────────────────── */
+a {
+    color: #2980b9;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ── Form table ─────────────────────────────────────────────── */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+table[border="1"] {
+    border: none;
+}
+
+td, th {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+td:first-child {
+    width: 180px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+th {
+    background-color: #2980b9;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f0f6fc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ── Inputs ─────────────────────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #dde1e7;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #2c3e50;
+    background: #fff;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+input[type="file"] {
+    font-size: 13px;
+    color: #555;
+}
+
+/* ── Checkboxes ─────────────────────────────────────────────── */
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 12px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #2c3e50;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    accent-color: #2980b9;
+    cursor: pointer;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+button {
+    padding: 7px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Primary — Add / Save */
+button[onclick^="add"],
+button[onclick^="update"],
+button[onclick^="save"] {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+button[onclick^="add"]:hover,
+button[onclick^="update"]:hover,
+button[onclick^="save"]:hover {
+    background-color: #1f6ea0;
+}
+
+/* Danger — Delete / Deactivate */
+button[onclick^="delete"],
+button[onclick^="toggle"] {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+button[onclick^="delete"]:hover,
+button[onclick^="toggle"]:hover {
+    background-color: #c0392b;
+}
+
+/* Secondary — Edit / Cancel */
+button[onclick^="open"],
+button[onclick^="cancel"] {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #dde1e7;
+}
+
+button[onclick^="open"]:hover,
+button[onclick^="cancel"]:hover {
+    background-color: #dde1e7;
+}
+
+/* ── Response message ────────────────────────────────────────── */
+#spec_response,
+#doc_response {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 20px;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+/* green = success, red = error — set in JS via color style */
+
+/* ── Edit section panel ──────────────────────────────────────── */
+#editSpecSection,
+#editDoctorSection {
+    background: #ffffff;
+    border: 1px solid #d5e8f5;
+    border-left: 4px solid #2980b9;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-top: 16px;
+}
+
+#editSpecSection h3,
+#editDoctorSection h3 {
+    margin-top: 0;
+    color: #2980b9;
+}
+
+/* ── Doctor photo thumbnail ──────────────────────────────────── */
+img[width="40"] {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #d5e8f5;
+    display: block;
+}
+
+/* ── Small text ─────────────────────────────────────────────── */
+small {
+    font-size: 11px;
+    color: #95a5a6;
+    display: block;
+    margin-top: 3px;
+}
+
+/* ── Nav link ───────────────────────────────────────────────── */
+a[href] {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 14px;
+    background: #eaf4fb;
+    border: 1px solid #d5e8f5;
+    border-radius: 5px;
+    color: #2980b9;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+a[href]:hover {
+    background: #d5e8f5;
+    text-decoration: none;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    td:first-child {
+        width: 120px;
+    }
+
+    th, td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
