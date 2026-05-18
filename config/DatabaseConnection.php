@@ -8,7 +8,7 @@ class DatabaseConnection
         $db_username = "root";
         $db_password = "";
         $db_name = "hospital_appointment";
-        
+        $db_port = 4306;
 
        
 
@@ -16,7 +16,8 @@ class DatabaseConnection
             $db_host,
             $db_username,
             $db_password,
-            $db_name
+            $db_name,
+            $db_port
         );
 
         if ($connection->connect_error) {

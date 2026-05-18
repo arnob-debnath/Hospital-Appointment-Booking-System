@@ -94,7 +94,7 @@ if ($_SESSION["role"] != "admin") {
                     information and schedules.
                 </p>
 
-                <a href="../../rahim/view/adminDoctorDashboard.php">
+                <a href="../../arnob/view/doctor.php">
                     Open Module
                 </a>
             </div>
@@ -107,7 +107,7 @@ if ($_SESSION["role"] != "admin") {
                     specializations for the system.
                 </p>
 
-                <a href="../../rahim/view/manageSpecialization.php">
+                <a href="../../arnob/view/specialization.php">
                     Open Module
                 </a>
             </div>
