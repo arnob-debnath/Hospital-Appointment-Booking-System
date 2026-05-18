@@ -8,6 +8,7 @@ class DatabaseConnection
         $db_username = "root";
         $db_password = "";
         $db_name = "hospital_appointment";
+       
 
         $connection = new mysqli(
             $db_host,
