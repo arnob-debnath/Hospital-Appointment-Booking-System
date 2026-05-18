@@ -1097,19 +1097,7 @@ Landing Website
     line-height: 1.5;
 }
 
-/* Responsive stats */
 
-@media (max-width: 1000px) {
-    .stats-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 520px) {
-    .stats-section {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* =========================
    UPGRADED STATS SECTION
@@ -1167,6 +1155,128 @@ Landing Website
     border-radius: 8px;
     margin-bottom: 12px;
     font-size: 14px;
+}
+.error-msg {
+    color: #b91c1c;
+    background: #fee2e2;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.field-error {
+    color: #b91c1c;
+    font-size: 13px;
+    margin: 4px 0 10px;
+    display: block;
+}
+
+.success-msg {
+    color: #15803d;
+    background: #dcfce7;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.patient-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #e9fbfb;
+}
+
+.dashboard-sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #007f86, #12b8a6);
+    color: white;
+    padding: 35px 25px;
+}
+
+.dashboard-sidebar h2 {
+    margin-bottom: 8px;
+}
+
+.dashboard-sidebar p {
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+.dashboard-sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 13px 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.12);
+}
+
+.dashboard-sidebar a:hover,
+.dashboard-sidebar .active {
+    background: rgba(255,255,255,0.25);
+}
+
+.dashboard-sidebar .logout {
+    margin-top: 35px;
+    background: rgba(255, 0, 0, 0.25);
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: 45px;
+}
+
+.dashboard-header {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 128, 128, 0.12);
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    color: #007f86;
+    margin-bottom: 8px;
+}
+
+.dashboard-header p {
+    color: #64748b;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.dash-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 128, 128, 0.12);
+}
+
+.dash-card h3 {
+    color: #007f86;
+    margin-bottom: 12px;
+}
+
+.dash-card p {
+    color: #64748b;
+    margin-bottom: 22px;
+}
+
+.dash-card a {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #0097a0, #10bfa8);
+    color: white;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 600;
 }
 /* =========================
    UPGRADED SERVICES SECTION
@@ -1254,4 +1364,296 @@ Landing Website
 
 .process-card:hover h3 {
     color: #00a889;
+}
+/* ---------- Patient Profile Page ---------- */
+
+.profile-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e9fbfb, #f4fffe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.profile-box {
+    width: 100%;
+    max-width: 1000px;
+    background: white;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 128, 128, 0.12);
+}
+
+.profile-box h2 {
+    color: #007f86;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.profile-flex {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.profile-card {
+    flex: 1;
+    background: #f8ffff;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #d9eeee;
+}
+
+.profile-card h3 {
+    color: #007f86;
+    margin-bottom: 18px;
+}
+
+.profile-card label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.profile-card input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dbe3ea;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.profile-card input:focus {
+    border-color: #00a6a6;
+    box-shadow: 0 0 0 4px rgba(0, 166, 166, 0.12);
+}
+
+.profile-card input[readonly] {
+    background: #f1f5f9;
+    cursor: not-allowed;
+}
+
+.profile-card button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 22px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0097a0, #10bfa8);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 151, 160, 0.2);
+}
+
+.field-error {
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+.success-msg {
+    color: #15803d;
+    background: #dcfce7;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.error-msg {
+    color: #b91c1c;
+    background: #fee2e2;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #007f86;
+    font-weight: 600;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Admin Dashboard ---------- */
+
+.admin-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #eef9f9;
+}
+
+/* Sidebar */
+
+.admin-sidebar {
+    width: 270px;
+    background: linear-gradient(180deg, #007f86, #10bfa8);
+    color: white;
+    padding: 35px 25px;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.08);
+}
+
+.admin-sidebar h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.admin-sidebar p {
+    opacity: 0.9;
+    margin-bottom: 35px;
+}
+
+.admin-sidebar a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.12);
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar .active {
+    background: rgba(255,255,255,0.25);
+    transform: translateX(4px);
+}
+
+.admin-sidebar .logout {
+    margin-top: 40px;
+    background: rgba(255, 0, 0, 0.18);
+}
+
+/* Main */
+
+.admin-main {
+    flex: 1;
+    padding: 40px;
+}
+
+/* Header */
+
+.admin-header {
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(0, 128, 128, 0.08);
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    color: #007f86;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.admin-header p {
+    color: #64748b;
+}
+
+/* Cards */
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.admin-card {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 128, 128, 0.08);
+    transition: 0.3s;
+}
+
+.admin-card:hover {
+    transform: translateY(-6px);
+}
+
+.admin-card h3 {
+    color: #007f86;
+    margin-bottom: 14px;
+    font-size: 24px;
+}
+
+.admin-card p {
+    color: #64748b;
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+.admin-card a {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #0097a0, #10bfa8);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.admin-card a:hover {
+    transform: scale(1.03);
+}
+
+@media(max-width: 900px) {
+
+    .admin-dashboard {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+    }
+
+    .admin-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .profile-flex {
+        flex-direction: column;
+    }
+}
+/* Responsive stats */
+
+@media (max-width: 1000px) {
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
 }
