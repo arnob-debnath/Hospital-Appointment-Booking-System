@@ -258,7 +258,7 @@ if ($action == "update") {
             move_uploaded_file($_FILES["photo"]["tmp_name"], $uploadDir . $photoPath);
         }
 
-        $result = $db->updateDoctor(
+        $result = $doctorModel->updateDoctor(
             $connection,
             $doctorId,
             $userId,
