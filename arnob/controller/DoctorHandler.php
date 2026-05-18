@@ -173,7 +173,7 @@ if ($action == "add") {
 
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-        $result = $db->insertDoctor(
+        $result = $doctorModel->insertDoctor(
             $connection,
             $name,
             $email,
