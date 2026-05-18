@@ -3,10 +3,7 @@
 session_start();
 
 
-if (
-    !isset($_SESSION["user_id"])
-    ||
-    $_SESSION["role"] != "patient"
+if (!isset($_SESSION["user_id"])||$_SESSION["role"] != "patient"
 ) {
     header("Location: ../../sudipto/view/login.php");
     exit();
@@ -16,34 +13,26 @@ include "../../config/DatabaseConnection.php";
 include "../model/DoctorModel.php";
 include "../model/SpecializationModel.php";
 
-$database =
-new DatabaseConnection();
+$database = new DatabaseConnection();
 
-$connection =
-$database->openConnection();
+$connection = $database->openConnection();
 
-$doctorModel =
-new DoctorModel();
+$doctorModel = new DoctorModel();
 
-$specializationModel =
-new SpecializationModel();
+$specializationModel = new SpecializationModel();
 
-$doctors =
-$doctorModel->getAllDoctors(
+$doctors = $doctorModel->getAllDoctors(
     $connection,
     "doctors",
     "users",
     "specializations"
 );
 
-$specializations =
-$specializationModel
-->getAllSpecializations(
+$specializations = $specializationModel->getAllSpecializations(
     $connection,
     "specializations"
 );
 
-include
-"../view/browseDoctors.php";
+include "../view/browseDoctors.php";
 
 ?>
