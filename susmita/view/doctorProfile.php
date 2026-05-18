@@ -8,7 +8,7 @@
 
 <body>
 
-    <?php if ($doctor == null) { ?>
+    <?php if (!isset($doctor) || $doctor == null) { ?>
 
         <div class="profile-container">
             <h2>Doctor Not Found</h2>
@@ -102,6 +102,18 @@
 
                 </div>
 
+                <div class="slot-section">
+
+                    <h2>Available Time Slots</h2>
+
+                    <div id="slotContainer" class="slot-container">
+                        <p class="slot-message">
+                            Please select a date to view available slots.
+                        </p>
+                    </div>
+
+                </div>
+
                 <a href="../controller/browseDoctorsController.php" class="back-btn">
                     Back to Doctors
                 </a>
@@ -111,6 +123,8 @@
         </div>
 
     <?php } ?>
+
+    <script src="../Assets/JS/doctorSlot.js"></script>
 
 </body>
 
