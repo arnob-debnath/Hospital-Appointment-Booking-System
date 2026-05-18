@@ -10,11 +10,11 @@ $action = $_POST["action"] ?? "";
 $db = new DatabaseConnection();
 $connection = $db->openConnection();
 
+$specializationModel = new SpecializationModel();
 
 // ===================== FETCH =====================
 
 if ($action == "fetch") {
-$specializationModel = new SpecializationModel();
     $result = $specializationModel->getAllSpecializations($connection);
     while ($row = $result->fetch_assoc()) {
 
@@ -46,13 +46,13 @@ if ($action == "add") {
 
         echo "Name must be at least 3 characters";
 
-    } elseif ($db->checkSpecializationNameExists($connection, $name)) {
+    } elseif ($specializationModel->checkSpecializationNameExists($connection, $name)) {
 
         echo "This specialization already exists";
 
     } else {
 
-        $result = $db->insertSpecialization($connection, $name);
+        $result = $specializationModel->insertSpecialization($connection, $name);
 
         if ($result) {
             echo "Specialization added successfully";
@@ -82,13 +82,13 @@ if ($action == "update") {
 
         echo "Name must be at least 3 characters";
 
-    } elseif ($db->checkSpecializationNameExists($connection, $name, $id)) {
+    } elseif ($specializationModel->checkSpecializationNameExists($connection, $name, $id)) {
 
         echo "This specialization name already exists";
 
     } else {
 
-        $result = $db->updateSpecialization($connection, $id, $name);
+        $result = $specializationModel->updateSpecialization($connection, $id, $name);
 
         if ($result) {
             echo "Specialization updated successfully";
@@ -104,7 +104,7 @@ if ($action == "update") {
 if ($action == "delete") {
 
     $id     = $_POST["id"] ?? "";
-    $result = $db->deleteSpecialization($connection, $id);
+    $result = $specializationModel->deleteSpecialization($connection, $id);
 
     if ($result == "has_doctors") {
         echo "Cannot delete — doctors are assigned to this specialization";

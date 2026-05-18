@@ -11,6 +11,9 @@ $uploadDir = "../View/uploads/";
 $db         = new DatabaseConnection();
 $connection = $db->openConnection();
 
+$doctorModel = new DoctorModel();
+$specializationModel = new SpecializationModel();
+
 // Make sure uploads folder exists
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0755, true);
@@ -21,7 +24,7 @@ if (!is_dir($uploadDir)) {
 
 if ($action == "fetch") {
 
-$doctorModel = new DoctorModel();
+
     $result = $doctorModel->getAllDoctors($connection);
 
     while ($row = $result->fetch_assoc()) {
@@ -57,7 +60,7 @@ $doctorModel = new DoctorModel();
 
 if ($action == "fetchSpecializations") {
 
-    $result  = $db->getAllSpecializations($connection);
+    $result  = $specializationModel->getAllSpecializations($connection);
     $options = "<option value=''>Select Specialization</option>";
 
     while ($row = $result->fetch_assoc()) {
@@ -73,7 +76,7 @@ if ($action == "fetchSpecializations") {
 if ($action == "fetchOne") {
 
     $id  = $_POST["id"] ?? "";
-    $row = $db->getDoctorById($connection, $id);
+    $row = $doctorModel->getDoctorById($connection, $id);
 
     if ($row) {
         echo json_encode($row);
@@ -89,7 +92,7 @@ if ($action == "fetchStats") {
 
     try {
 
-        $result = $db->getDoctorStats($connection);
+        $result = $doctorModel->getDoctorStats($connection);
         $stats  = [];
 
         while ($row = $result->fetch_assoc()) {
@@ -131,7 +134,7 @@ if ($action == "add") {
 
         echo "Valid email is required";
 
-    } elseif ($db->checkEmailExists($connection, $email)) {
+    } elseif ($doctorModel->checkEmailExists($connection, $email)) {
 
         echo "This email is already registered";
 
@@ -218,7 +221,7 @@ if ($action == "update") {
 
         echo "Valid email is required";
 
-    } elseif ($db->checkEmailExists($connection, $email, $userId)) {
+    } elseif ($doctorModel->checkEmailExists($connection, $email, $userId)) {
 
         echo "This email is already taken";
 
