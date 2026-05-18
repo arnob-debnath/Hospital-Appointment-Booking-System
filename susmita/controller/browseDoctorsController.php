@@ -2,6 +2,16 @@
 
 session_start();
 
+
+if (
+    !isset($_SESSION["user_id"])
+    ||
+    $_SESSION["role"] != "patient"
+) {
+    header("Location: ../../sudipto/view/login.php");
+    exit();
+}
+
 include "../../config/DatabaseConnection.php";
 include "../model/DoctorModel.php";
 include "../model/SpecializationModel.php";
