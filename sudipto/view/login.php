@@ -1,11 +1,6 @@
 <?php
 session_start();
-
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,27 +28,48 @@ session_start();
         </div>
 
         <div class="login-box">
+
             <?php
             if (isset($_SESSION["successMsg"])) {
                 echo "<p class='success-msg'>" . $_SESSION["successMsg"] . "</p>";
                 unset($_SESSION["successMsg"]);
             }
+
+            if (isset($_SESSION["loginErr"])) {
+                echo "<p class='error-msg'>" . $_SESSION["loginErr"] . "</p>";
+                unset($_SESSION["loginErr"]);
+            }
             ?>
+
             <h2>Login</h2>
             <p class="subtitle">Access your hospital account</p>
 
-            <form action="" method="post">
+            <form action="../controller/loginController.php" method="post">
+
                 <label>Email Address</label>
                 <div class="input-group">
                     <span>✉</span>
-                    <input type="email" name="email" placeholder="Enter your email">
+                    <input type="email" name="email" placeholder="Enter your email"
+                        value="<?php echo $_SESSION['loginEmail'] ?? ''; ?>">
                 </div>
+                <span class="field-error">
+                    <?php
+                    echo $_SESSION["loginEmailErr"] ?? "";
+                    unset($_SESSION["loginEmailErr"]);
+                    ?>
+                </span>
 
                 <label>Password</label>
                 <div class="input-group">
                     <span></span>
                     <input type="password" name="password" placeholder="Enter your password">
                 </div>
+                <span class="field-error">
+                    <?php
+                    echo $_SESSION["loginPasswordErr"] ?? "";
+                    unset($_SESSION["loginPasswordErr"]);
+                    ?>
+                </span>
 
                 <div class="options">
                     <label class="remember">
