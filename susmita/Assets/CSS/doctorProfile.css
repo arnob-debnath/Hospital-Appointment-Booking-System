@@ -153,6 +153,48 @@ body {
     color: white;
 }
 
+.slot-section {
+    margin-top: 30px;
+}
+
+.slot-section h2 {
+    color: #007c89;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.slot-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.slot-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #008fa1, #00bfa6);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 22px rgba(0, 191, 166, 0.25);
+    transition: 0.3s ease;
+}
+
+.slot-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #007c89, #00a889);
+}
+
+.slot-message,
+.no-slot {
+    color: #667;
+    background: white;
+    padding: 15px 18px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 120, 150, 0.08);
+}
+
 @media (max-width: 700px) {
     .date-buttons {
         grid-template-columns: 1fr;

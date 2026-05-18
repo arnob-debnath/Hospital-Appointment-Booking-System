@@ -32,8 +32,14 @@
 <div id="doctorContainer" class="doctor-container">
 
 <?php
-if ($doctors && $doctors->num_rows > 0) {
-    while ($doctor = $doctors->fetch_assoc()) {
+if (isset($doctors) &&
+    $doctors &&
+    $doctors->num_rows > 0) {
+
+    while (
+        $doctor =
+        $doctors->fetch_assoc()
+    ) {
 ?>
 
     <div class="doctor-card">
