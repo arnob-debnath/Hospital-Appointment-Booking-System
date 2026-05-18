@@ -89,7 +89,7 @@ if ($user["role"] == "patient") {
     header("Location: ../../hasan/view/doctorHome.php");
     exit();
 } elseif ($user["role"] == "admin") {
-    header("Location: ../view/manageUsers.php");
+     header("Location: ../view/adminHome.php");
     exit();
 } else {
     $_SESSION["loginErr"] = "Invalid user role";
