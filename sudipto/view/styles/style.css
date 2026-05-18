@@ -1499,6 +1499,146 @@ Landing Website
     text-decoration: underline;
 }
 
+/* ---------- Admin Dashboard ---------- */
+
+.admin-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #eef9f9;
+}
+
+/* Sidebar */
+
+.admin-sidebar {
+    width: 270px;
+    background: linear-gradient(180deg, #007f86, #10bfa8);
+    color: white;
+    padding: 35px 25px;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.08);
+}
+
+.admin-sidebar h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.admin-sidebar p {
+    opacity: 0.9;
+    margin-bottom: 35px;
+}
+
+.admin-sidebar a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.12);
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar .active {
+    background: rgba(255,255,255,0.25);
+    transform: translateX(4px);
+}
+
+.admin-sidebar .logout {
+    margin-top: 40px;
+    background: rgba(255, 0, 0, 0.18);
+}
+
+/* Main */
+
+.admin-main {
+    flex: 1;
+    padding: 40px;
+}
+
+/* Header */
+
+.admin-header {
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(0, 128, 128, 0.08);
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    color: #007f86;
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.admin-header p {
+    color: #64748b;
+}
+
+/* Cards */
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.admin-card {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 128, 128, 0.08);
+    transition: 0.3s;
+}
+
+.admin-card:hover {
+    transform: translateY(-6px);
+}
+
+.admin-card h3 {
+    color: #007f86;
+    margin-bottom: 14px;
+    font-size: 24px;
+}
+
+.admin-card p {
+    color: #64748b;
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+.admin-card a {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #0097a0, #10bfa8);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.admin-card a:hover {
+    transform: scale(1.03);
+}
+
+@media(max-width: 900px) {
+
+    .admin-dashboard {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+    }
+
+    .admin-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 @media (max-width: 800px) {
     .profile-flex {
         flex-direction: column;
