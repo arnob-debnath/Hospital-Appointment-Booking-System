@@ -21,6 +21,7 @@ $appointment_time = "";
 
 $error = "";
 $appointment_id = "";
+$doctor_name = "";
 
 $patient_id = $_SESSION["user_id"];
 
@@ -76,6 +77,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($result) {
 
                 $appointment_id = $connection->insert_id;
+
+                $doctorQuery = $connection->query(
+                    "SELECT users.name
+                     FROM doctors
+                     INNER JOIN users
+                     ON doctors.user_id = users.id
+                     WHERE doctors.id = '$doctor_id'"
+                );
+
+                $doctorData = $doctorQuery->fetch_assoc();
+                $doctor_name = $doctorData["name"];
 
                 include "../view/appointmentConfirmation.php";
                 exit();
