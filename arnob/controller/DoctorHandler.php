@@ -258,7 +258,7 @@ if ($action == "update") {
             move_uploaded_file($_FILES["photo"]["tmp_name"], $uploadDir . $photoPath);
         }
 
-        $result = $db->updateDoctor(
+        $result = $doctorModel->updateDoctor(
             $connection,
             $doctorId,
             $userId,
@@ -274,7 +274,7 @@ if ($action == "update") {
         // Update password only if provided
         if ($password) {
             $hash = password_hash($password, PASSWORD_BCRYPT);
-            $db->updateDoctorPassword($connection, $userId, $hash);
+            $doctorModel->updateDoctorPassword($connection, $userId, $hash);
         }
 
         if ($result) {
@@ -303,12 +303,12 @@ if ($action == "toggleStatus") {
 
     } elseif ($isActive == 1) {
 
-        $db->deactivateDoctor($connection, $userId);
+        $doctorModel->deactivateDoctor($connection, $userId);
         echo "Doctor deactivated";
 
     } else {
 
-        $db->reactivateDoctor($connection, $userId);
+        $doctorModel->reactivateDoctor($connection, $userId);
         echo "Doctor reactivated";
     }
 }
