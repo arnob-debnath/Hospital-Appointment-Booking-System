@@ -39,8 +39,8 @@ class DoctorModel {
 
     function insertDoctor($connection, $name, $email, $passwordHash, $specializationId, $bio, $fee, $photoPath, $availableDays) {
         // Step 1: Insert into users
-        $sql1 = "INSERT INTO users (name, email, password_hash, role, is_active, must_reset_password, created_at)
-                 VALUES ('$name', '$email', '$passwordHash', 'doctor', 1, 1, NOW())";
+        $sql1 = "INSERT INTO users (name, email, password_hash, role, is_active, created_at)
+                 VALUES ('$name', '$email', '$passwordHash', 'doctor', 1, NOW())";
 
         if (!$connection->query($sql1)) {
             return false;
