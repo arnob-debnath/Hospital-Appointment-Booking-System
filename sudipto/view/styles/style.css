@@ -1097,19 +1097,7 @@ Landing Website
     line-height: 1.5;
 }
 
-/* Responsive stats */
 
-@media (max-width: 1000px) {
-    .stats-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 520px) {
-    .stats-section {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* =========================
    UPGRADED STATS SECTION
@@ -1167,6 +1155,128 @@ Landing Website
     border-radius: 8px;
     margin-bottom: 12px;
     font-size: 14px;
+}
+.error-msg {
+    color: #b91c1c;
+    background: #fee2e2;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.field-error {
+    color: #b91c1c;
+    font-size: 13px;
+    margin: 4px 0 10px;
+    display: block;
+}
+
+.success-msg {
+    color: #15803d;
+    background: #dcfce7;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.patient-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #e9fbfb;
+}
+
+.dashboard-sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #007f86, #12b8a6);
+    color: white;
+    padding: 35px 25px;
+}
+
+.dashboard-sidebar h2 {
+    margin-bottom: 8px;
+}
+
+.dashboard-sidebar p {
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+.dashboard-sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 13px 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.12);
+}
+
+.dashboard-sidebar a:hover,
+.dashboard-sidebar .active {
+    background: rgba(255,255,255,0.25);
+}
+
+.dashboard-sidebar .logout {
+    margin-top: 35px;
+    background: rgba(255, 0, 0, 0.25);
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: 45px;
+}
+
+.dashboard-header {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 128, 128, 0.12);
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    color: #007f86;
+    margin-bottom: 8px;
+}
+
+.dashboard-header p {
+    color: #64748b;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.dash-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 128, 128, 0.12);
+}
+
+.dash-card h3 {
+    color: #007f86;
+    margin-bottom: 12px;
+}
+
+.dash-card p {
+    color: #64748b;
+    margin-bottom: 22px;
+}
+
+.dash-card a {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #0097a0, #10bfa8);
+    color: white;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 600;
 }
 /* =========================
    UPGRADED SERVICES SECTION
@@ -1254,4 +1364,19 @@ Landing Website
 
 .process-card:hover h3 {
     color: #00a889;
+}
+
+
+/* Responsive stats */
+
+@media (max-width: 1000px) {
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
 }
