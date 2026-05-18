@@ -36,33 +36,33 @@ class AppointmentModel
         return $connection->query($sql);
     }
 
+
     function getPatientAppointments($connection, $appointmentTable, $doctorTable, $userTable, $specializationTable, $patient_id)
     {
         $sql = "SELECT
-                $appointmentTable.id AS appointment_id,
-                $appointmentTable.appointment_date,
-                $appointmentTable.appointment_time,
-                $appointmentTable.reason,
-                $appointmentTable.status,
+                    $appointmentTable.id AS appointment_id,
+                    $appointmentTable.appointment_date,
+                    $appointmentTable.appointment_time,
+                    $appointmentTable.reason,
+                    $appointmentTable.status,
+                    $userTable.name AS doctor_name,
+                    $specializationTable.name AS specialization_name
 
-                $userTable.name AS doctor_name,
-                $specializationTable.name AS specialization_name
+                FROM $appointmentTable
 
-            FROM $appointmentTable
+                INNER JOIN $doctorTable
+                ON $appointmentTable.doctor_id = $doctorTable.id
 
-            INNER JOIN $doctorTable
-            ON $appointmentTable.doctor_id = $doctorTable.id
+                INNER JOIN $userTable
+                ON $doctorTable.user_id = $userTable.id
 
-            INNER JOIN $userTable
-            ON $doctorTable.user_id = $userTable.id
+                INNER JOIN $specializationTable
+                ON $doctorTable.specialization_id = $specializationTable.id
 
-            INNER JOIN $specializationTable
-            ON $doctorTable.specialization_id = $specializationTable.id
+                WHERE $appointmentTable.patient_id = '$patient_id'
 
-            WHERE $appointmentTable.patient_id = '$patient_id'
-
-            ORDER BY $appointmentTable.appointment_date DESC,
-            $appointmentTable.appointment_time DESC";
+                ORDER BY $appointmentTable.appointment_date DESC,
+                $appointmentTable.appointment_time DESC";
 
         return $connection->query($sql);
     }
@@ -71,10 +71,10 @@ class AppointmentModel
     function cancelAppointment($connection, $tableName, $appointment_id, $patient_id)
     {
         $sql = "UPDATE $tableName
-            SET status = 'Cancelled'
-            WHERE id = '$appointment_id'
-            AND patient_id = '$patient_id'
-            AND status = 'Pending'";
+                SET status = 'Cancelled'
+                WHERE id = '$appointment_id'
+                AND patient_id = '$patient_id'
+                AND status = 'Pending'";
 
         return $connection->query($sql);
     }
