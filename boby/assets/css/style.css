@@ -1,0 +1,330 @@
+/* =========================================================
+
+   STUDENT 4 SAFE CSS
+
+   ADD ONLY THIS AT THE BOTTOM OF STUDENT 1 CSS
+
+========================================================= */
+
+.home-body {
+    display: block !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+    padding: 30px;
+}
+
+
+/* =========================
+
+   DASHBOARD CONTAINER
+
+========================= */
+
+.dashboard-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 28px;
+    padding: 35px;
+    box-shadow: 0 25px 60px rgba(0, 120, 150, 0.14);
+    border: 1px solid rgba(0, 191, 166, 0.15);
+    backdrop-filter: blur(12px);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    font-size: 34px;
+    color: #12343b;
+}
+
+.welcome-profile {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 120, 150, 0.08);
+    color: #345;
+    font-weight: 600;
+}
+
+
+/* =========================
+
+   TABLE
+
+========================= */
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.dashboard-table thead {
+    background: linear-gradient(135deg, #008fa1, #00bfa6);
+}
+
+.dashboard-table th {
+    color: white;
+    padding: 16px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.dashboard-table td {
+    padding: 15px;
+    border-bottom: 1px solid #edf3f5;
+    color: #345;
+}
+
+.dashboard-table tbody tr:hover {
+    background: rgba(0, 191, 166, 0.05);
+}
+
+
+/* =========================
+
+   STATUS BADGES
+
+========================= */
+
+.status-badge {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.pending {
+    background: rgba(255, 193, 7, 0.15);
+    color: #9a6700;
+}
+
+.confirmed {
+    background: rgba(0, 123, 255, 0.14);
+    color: #0062cc;
+}
+
+.completed {
+    background: rgba(40, 167, 69, 0.15);
+    color: #198754;
+}
+
+.cancelled {
+    background: rgba(220, 53, 69, 0.14);
+    color: #c82333;
+}
+
+.no-show {
+    background: rgba(108, 117, 125, 0.14);
+    color: #495057;
+}
+
+
+/* =========================
+
+   ACTION BUTTONS
+
+========================= */
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.action-buttons button {
+    width: auto !important;
+    padding: 10px 14px !important;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+}
+
+
+/* REMOVE STUDENT 1 BUTTON EFFECT */
+
+.action-buttons button::before {
+    display: none !important;
+}
+
+.btn-complete {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.btn-noshow {
+    background: linear-gradient(135deg, #6c757d, #495057);
+}
+
+.btn-confirm {
+    background: linear-gradient(135deg, #007bff, #00bfa6);
+}
+
+.btn-cancel {
+    background: linear-gradient(135deg, #dc3545, #ff6b6b);
+}
+
+.action-buttons button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+
+   FILTER SECTION
+
+========================= */
+
+.filter-box {
+    background: rgba(255, 255, 255, 0.82);
+    padding: 22px;
+    border-radius: 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 12px 28px rgba(0, 120, 150, 0.08);
+}
+
+.filter-form {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.filter-form select,
+.filter-form input {
+    width: auto !important;
+    min-width: 190px;
+}
+
+
+/* =========================
+
+   WEEKLY GRID
+
+========================= */
+
+.weekly-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.day-column {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 15px 35px rgba(0, 120, 150, 0.08);
+}
+
+.day-column h3 {
+    background: linear-gradient(135deg, #008fa1, #00bfa6);
+    color: white;
+    padding: 12px;
+    border-radius: 14px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.appointment-block {
+    background: white;
+    border-left: 5px solid #00bfa6;
+    padding: 14px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 18px rgba(0, 120, 150, 0.08);
+}
+
+.appointment-block:hover {
+    transform: translateY(-3px);
+    background: rgba(0, 191, 166, 0.05);
+}
+
+
+/* =========================
+
+   RESPONSIVE
+
+========================= */
+
+@media(max-width:950px) {
+    .weekly-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:700px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .weekly-grid {
+        grid-template-columns: 1fr;
+    }
+    .dashboard-table {
+        display: block;
+        overflow-x: auto;
+    }
+    .filter-form {
+        flex-direction: column;
+    }
+}
+
+/* Boby merge compatibility fixes */
+.noshow {
+    background: rgba(108, 117, 125, 0.14);
+    color: #495057;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(0, 191, 166, 0.12);
+    color: #007f86;
+    padding: 7px 13px;
+    border-radius: 999px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.logout-link {
+    color: #007f86;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+.filter-form button {
+    width: auto !important;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .weekly-grid {
+        grid-template-columns: 1fr;
+    }
+}
